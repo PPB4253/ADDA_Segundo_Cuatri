@@ -12,7 +12,6 @@ Integer getPresupuestoMax()
 Integer n = getNumCandidatos()
 Integer m = getNumCualidades()
 
-
 goal section
 // decidir MAX/MIN y expresar como funcion lineal
 max sum(getValoracion(i) x[i], i in 0 .. n)
@@ -20,10 +19,10 @@ max sum(getValoracion(i) x[i], i in 0 .. n)
 constraints section
 // Seguir las restricciones del modelo y expresar como f. lineal
 // R1
-sum(x[i], i in 0 .. n | getTieneCualidad(i, j)) >= 1, j in 0 .. m
+sum(x[i], i in 0 .. n | getTieneCualidad(i,j)) >= 1, j in 0 .. m
 
 // R2		lo de que k es i+1 es para que coja al siguiente candidato y lo compare para ver si son incompatibles
-x[i] + x[k] <= 1, i in 0 .. n, k in i+1 .. n | getSonIncompatibles(i, k)
+x[i] + x[k] <=1, i in 0 .. n, k in 0 .. n | i< k && getSonIncompatibles(i,k)
 
 // R3
 sum(getSueldoMin(i) x[i], i in 0 .. n) <= getPresupuestoMax()

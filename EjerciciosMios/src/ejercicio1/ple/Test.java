@@ -9,7 +9,7 @@ import us.lsi.solve.AuxGrammar;
 
 public class Test {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {		// Si da error: Error en Parser : El resultado de invocar el m�todo getNumCandidatos con {} es null HAY QUE PONER UN exports EN EL MODULE INFO
 		// 1. Ver y entender los datos de entrada.
 		// Formalizar a papel primero
 		
@@ -27,7 +27,7 @@ public class Test {
 			// 5. Procesar la solución.
 			var solucion = GurobiLp.gurobi("src/ejercicio1/ple/Ejercicio1-"+i+".lp");
 			if (solucion.isPresent()) {				
-				System.out.println(solucion.get().toString((vble, valor)-> valor>0));
+				System.out.println(solucion.get().toString((vble, valor)-> valor>0));	// BiCondicional que solo me muestra los que tengan valor mayor que 0
 			} else {
 				System.out.println("\n\n*****Modelo sin solución****");
 			}

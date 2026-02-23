@@ -1,0 +1,19 @@
+head section
+// cogemos todos los que no sean listas ni nada de eso, solo valores primitivos, integer, double, etc.
+Integer getNumSubconjuntos()
+Integer getNumElementos()
+Double getPeso(Integer i)
+Integer contieneElemento(Integer i, Integer j)
+
+// constantes
+Integer n = getNumSubconjuntos()
+Integer m = getNumElementos()
+
+goal section
+min sum(getPeso(i) x[i], i in 0 .. n)
+
+constraints section
+sum(contieneElemento(i,j) x[i], i in 0 .. n) >= 1, j in 0 .. m
+
+bin
+x[i], i in 0 .. n
