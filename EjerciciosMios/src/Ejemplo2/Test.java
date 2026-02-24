@@ -32,7 +32,7 @@ public class Test {
 			System.out.println("Sin solucion");
 		} else {
 			// System.out.println(sol.get().toString((s, d)->d>.0));  	MUESTRA SOLO LAS VARIABLES MAYORES QUE 0
-			System.out.println(sol.get().toString((s, d)->d>.0));
+			System.out.println(sol.get().toString((s, d)->d>.0));		// s es de string y d de double
 			MuestreSeleccionados(sol.get());
 		}
 	}
