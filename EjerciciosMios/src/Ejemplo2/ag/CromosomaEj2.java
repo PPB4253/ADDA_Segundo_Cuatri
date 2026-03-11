@@ -1,4 +1,4 @@
-package Ejemplo2_ag;
+package Ejemplo2.ag;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import us.lsi.ag.agchromosomes.Chromosomes.ChromosomeType;
 // BinaryData<> es pq es una variable binaria
 public class CromosomaEj2 implements BinaryData<List<Integer>>{		// Esto no debe hacerse BinaryData<List<Integer>> la lista debe de ser una clase externa o algo asi dice (EN PROXIMA CLASE SE VE CON LA CLASE SOLUTION)
 	
-	// Dandole add uimplemented methods, me pone lo de abajo solo
+	// Dandole add unimplemented methods, me pone lo de abajo solo
 	
 	@Override
 	public Integer size() {	// SIEMPRE IGUAL

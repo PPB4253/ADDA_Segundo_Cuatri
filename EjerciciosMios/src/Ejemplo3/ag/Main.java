@@ -1,4 +1,4 @@
-package Ejemplo2_ag;
+package Ejemplo3.ag;
 
 import us.lsi.ag.agchromosomes.AlgoritmoAG;
 import us.lsi.ag.agstopping.StoppingConditionFactory;
@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// 1. Ver y entender los datos del problema. Cargarlos
-		DatosSubconjunto.iniDatos("src/Ejemplo2_ag/ejemplo2_1.txt");
+		DatosAlumnos.iniDatos("src/Ejemplo3/ag/ejemplo3_1.txt");
 		
 		// 2 Precondicion. Hacer la clase solución, 
 		// 2. Elegir la interfaz cromosoma e implementar
@@ -24,9 +24,9 @@ public class Main {
 		StoppingConditionFactory.stoppingConditionType = StoppingConditionFactory.StoppingConditionType.GenerationCount;
 		
 		// 4. Crear el algoritmo y ejecutar
-		var algG = AlgoritmoAG.of(new CromosomaEj2());
+		var algG = AlgoritmoAG.of(new CromosomaEj3());
 		algG.ejecuta();
-		var sol = algG.bestSolution();		// var en nuestro caso es List<Integer> pero no deberia de serlo, deberia de ser s, por eso lo de var (EN PROXIMA CLASE SE VE CON LA CLASE SOLUTION)
+		var sol = algG.bestSolution();		// var en nuestro caso es List<Integer> pero no deberia de serlo, deberia de ser s, por eso lo de var
 		
 		// 5. Procesar solución
 		System.out.println(sol);

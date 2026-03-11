@@ -9,8 +9,8 @@ module ejemplospracticas {
 	requires solve;
 	requires geneticos;
 	
-	exports Ejemplo1;
-	exports Ejemplo2;
-	exports Ejemplo3;
+	exports Ejemplo1.ple;
+	exports Ejemplo2.ple;
+	exports Ejemplo3.ple;
 	exports ejercicio1.ple;
 }

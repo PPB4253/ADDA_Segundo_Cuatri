@@ -1,4 +1,4 @@
-package Ejemplo3_ag;
+package Ejemplo3.ag;
 
 import java.util.List;
 import java.util.stream.Collectors;

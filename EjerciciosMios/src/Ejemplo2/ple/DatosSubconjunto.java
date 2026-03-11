@@ -1,4 +1,4 @@
-package Ejemplo2_ag;
+package Ejemplo2.ple;
 
 import java.util.List;
 import java.util.Set;

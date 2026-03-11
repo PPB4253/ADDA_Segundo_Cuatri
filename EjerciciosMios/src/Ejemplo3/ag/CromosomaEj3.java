@@ -1,12 +1,12 @@
-package Ejemplo3_ag;
+package Ejemplo3.ag;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import us.lsi.ag.BinaryData;
+import us.lsi.ag.PermutationData;
 import us.lsi.ag.agchromosomes.Chromosomes.ChromosomeType;
 
-public class CromosomaEj3 implements BinaryData<List<Integer>>{
+public class CromosomaEj3 implements PermutationData<List<Integer>>{
 
 	@Override
 	public Integer size() {
@@ -26,7 +26,7 @@ public class CromosomaEj3 implements BinaryData<List<Integer>>{
 
 	@Override
 	public ChromosomeType type() {
-		return ChromosomeType.Binary;
+		return ChromosomeType.Permutation;
 	}
 
 }

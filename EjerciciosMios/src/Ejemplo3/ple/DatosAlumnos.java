@@ -1,4 +1,4 @@
-package Ejemplo3;
+package Ejemplo3.ple;
 
 import java.util.List;
 import java.util.stream.Collectors;

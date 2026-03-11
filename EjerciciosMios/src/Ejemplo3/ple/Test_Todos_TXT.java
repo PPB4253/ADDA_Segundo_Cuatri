@@ -1,4 +1,4 @@
-package Ejemplo1;
+package Ejemplo3.ple;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,10 +17,10 @@ public class Test_Todos_TXT {
 		
 		Locale.setDefault(Locale.of("es", "ES"));
 		for(Integer i: List.of(1, 2, 3)) { // indique los tests a realizar
-			Datos.iniDatos("src/Ejemplo1/ejemplo1_"+i+".txt");
-			AuxGrammar.generate(Datos.class,"src/Ejemplo1/ejemplo1.lsi","src/Ejemplo1/ejemplo"+i+".lp");
+			DatosAlumnos.iniDatos("src/Ejemplo3/ple/ejemplo3_"+i+".txt");
+			AuxGrammar.generate(DatosAlumnos.class,"src/Ejemplo3/ple/ejemplo3.lsi","src/Ejemplo3/ple/ejemplo"+i+".lp");
 			
-			Optional<GurobiSolution> solucion = GurobiLp.gurobi("src/Ejemplo1/ejemplo"+i+".lp");
+			Optional<GurobiSolution> solucion = GurobiLp.gurobi("src/Ejemplo3/ple/ejemplo"+i+".lp");
 			if (solucion.isPresent()) {				
 				System.out.println(solucion.get().toString((vble, valor)-> valor>0));
 			} else {
