@@ -13,11 +13,11 @@ Integer n = getNumCandidatos()
 Integer m = getNumCualidades()
 
 goal section
-// decidir MAX/MIN y expresar como funcion lineal
+// decidir MAX/MIN y expresar como funcion lineal:
 max sum(getValoracion(i) x[i], i in 0 .. n)
 
 constraints section
-// Seguir las restricciones del modelo y expresar como f. lineal
+// Seguir las restricciones del modelo y expresar como f. lineal:
 // R1
 sum(x[i], i in 0 .. n | getTieneCualidad(i,j)) >= 1, j in 0 .. m
 

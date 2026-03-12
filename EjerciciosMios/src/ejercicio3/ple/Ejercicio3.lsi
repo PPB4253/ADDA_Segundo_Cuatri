@@ -1,0 +1,33 @@
+head section
+// Funciones que vamos a usar:
+Integer getNumElementos()
+Integer getNumContenedores()
+Integer getPuedeUbicarse2(Integer i, Integer j)
+Integer getTamElemento(Integer i)
+Integer getTamContenedor(Integer j)
+
+// Constantes:
+Integer n = getNumElementos()
+Integer m = getNumContenedores()
+
+
+goal section
+// Función Objetivo:
+max sum(y[j], j in 0 .. m)
+
+
+constraints section
+// Restricciones:
+//R1				Para cada elemento i, se puede ubicar como máximo en un contenedor j, EL ORDEN DE  j in 0 .. m y i in 0 .. n IMPORTA
+sum(x[i,j], j in 0 .. m) <= 1, i in 0 .. n
+//R2
+x[i,j] <= getPuedeUbicarse2(i,j), i in 0 .. n, j in 0 .. m
+//R3
+sum(getTamElemento(i)  x[i,j], i in 0 .. n) <= getTamContenedor(j), j in 0 .. m
+//R4
+sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] >= 0, j in 0 .. m
+
+bin
+// Declaracion de variables
+x[i,j], i in 0 .. n, j in 0 .. m
+y[j], j in 0 .. m

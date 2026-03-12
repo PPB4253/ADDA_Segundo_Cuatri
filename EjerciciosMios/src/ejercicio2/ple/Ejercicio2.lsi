@@ -1,0 +1,35 @@
+head section
+// Incluir los metodos necesarios, entre ellos:
+Integer getNumProductos()
+Double getPrecioProd(Integer i)
+Integer getUnidsSemanaProd(Integer i)
+Integer getTiempoProdTotal()
+Integer getTiempoElabTotal()
+Integer getTiempoProdProd(Integer i)
+Integer getTiempoElabProd(Integer i)
+
+// Definir las constantes necesarias con algunos metodos anteriores, entre ellas:
+Integer n = getNumProductos()
+
+
+goal section
+// F.O. MAX/MIN y expresar como funcion lineal:
+max sum(getPrecioProd(i) x[i], i in 0 .. n)
+
+
+constraints section
+// Seguir las restricciones del modelo y expresar como f. lineal:
+
+//R2			CON getTiempoProdProd(i), que esta en Datos2, NOS AHORRAMOS HACER EL DOBLE SUMATORIO Y EL TENER OTRA CONSTANTE m
+sum(getTiempoProdProd(i) x[i], i in 0 .. n) <= getTiempoProdTotal()
+
+//R3			CON getTiempoProdProd(i), que esta en Datos2, NOS AHORRAMOS HACER EL DOBLE SUMATORIO Y EL TENER OTRA CONSTANTE m
+sum(getTiempoElabProd(i) x[i], i in 0 .. n) <= getTiempoElabTotal()
+
+bounds section
+// R1
+// Además, Gurobi ya asume por defecto que las variables "int" son >= 0, así que no hace falta poner x[i] >= 0.
+x[i] <= getUnidsSemanaProd(i), i in 0 .. n
+
+int
+x[i], i in 0 .. n

@@ -1,0 +1,70 @@
+head section
+// Funciones que vamos a usar:
+Integer getNumElementos()
+Integer getNumContenedores()
+Boolean getPuedeUbicarse(Integer i, Integer j)
+Integer getTamElemento(Integer i)
+Integer getTamContenedor(Integer j)
+
+// Constantes:
+Integer n = getNumElementos()
+Integer m = getNumContenedores()
+
+
+goal section
+// Función Objetivo:
+max sum(y[j], j in 0 .. m)
+
+
+constraints section
+// Restricciones:
+//R1				Para cada elemento i, se puede ubicar como máximo en un contenedor j, EL ORDEN DE  j in 0 .. m y i in 0 .. n IMPORTA
+sum(x[i,j], j in 0 .. m) <= 1, i in 0 .. n
+//R2
+x[i,j] = 0, i in 0 .. n, j in 0 .. m | getNoPuedeUbicarse(i,j)
+//R3
+sum(getTamElemento(i)  x[i,j], i in 0 .. n) <= getTamContenedor(j), j in 0 .. m
+//R4
+sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] >= 0, j in 0 .. m
+
+bin
+// Declaracion de variables
+x[i,j], i in 0 .. n, j in 0 .. m
+y[j], j in 0 .. m
+
+
+
+	// ELEGIR UNO U OTRO, LOS 2 A LA VEZ DAN ERROR
+	
+
+head section
+Integer getNumElementos()
+Integer getNumContenedores()
+Integer getTamElemento(Integer i)
+Integer getTamContenedor(Integer j)
+Boolean getPuedeUbicarse(Integer i, Integer j)
+Boolean getNoPuedeUbicarse(Integer i, Integer j)
+
+Integer n = getNumElementos()
+Integer m = getNumContenedores()
+
+
+goal section
+// Maximizar el número de contenedores totalmente ocupados
+max sum(y[j], j in 0 .. m)
+
+
+constraints section
+// R1 - La suma de tamaños asignados al contenedor j no supera su capacidad
+//      y si y[j]=1, queda acotada por c_j (el optimizador llena el contenedor al maximizar)
+sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] <= 0, j in 0 .. m
+
+// R2 - Cada elemento se ubica en como máximo un contenedor
+sum(x[i,j], j in 0 .. m) <= 1, i in 0 .. n
+
+
+bin
+// x[i,j]=1 si el elemento i va al contenedor j
+// el filtro getNoPuedeUbicarse excluye combinaciones incompatibles directamente
+x[i,j], i in 0 .. n, j in 0 .. m | getPuedeUbicarse(i,j)
+y[j], j in 0 .. m

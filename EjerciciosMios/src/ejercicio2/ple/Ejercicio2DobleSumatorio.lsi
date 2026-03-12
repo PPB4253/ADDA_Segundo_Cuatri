@@ -1,0 +1,30 @@
+head section
+Integer getNumProductos()
+Integer getNumComponentes()
+Double getPrecioProd(Integer i)
+Integer getUnidsSemanaProd(Integer i)
+Integer getTiempoProdComp(Integer j)
+Integer getTiempoElabComp(Integer j)
+Integer getUnidadesComponente(Integer i, Integer j)
+Integer getTiempoProdTotal()
+Integer getTiempoElabTotal()
+
+Integer n = getNumProductos()
+Integer m = getNumComponentes()
+
+goal section
+max sum(getPrecioProd(i) x[i], i in 0 .. n)
+
+constraints section
+// R2: Sumatorio doble para el tiempo total de producción
+sum(getTiempoProdComp(j) sum(getUnidadesComponente(i,j) x[i], i in 0 .. n), j in 0 .. m) <= getTiempoProdTotal()
+
+// R3: Sumatorio doble para el tiempo total de elaboración manual
+sum(getTiempoElabComp(j) sum(getUnidadesComponente(i,j) x[i], i in 0 .. n), j in 0 .. m) <= getTiempoElabTotal()
+
+bounds section
+// R1: Límite máximo de ventas por producto
+x[i] <= getUnidsSemanaProd(i), i in 0 .. n
+
+int
+x[i], i in 0 .. n
