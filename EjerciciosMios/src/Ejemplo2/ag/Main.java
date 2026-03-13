@@ -24,12 +24,14 @@ public class Main {
 		StoppingConditionFactory.stoppingConditionType = StoppingConditionFactory.StoppingConditionType.GenerationCount;
 		
 		// 4. Crear el algoritmo y ejecutar
-		var algG = AlgoritmoAG.of(new CromosomaEj2());
-		algG.ejecuta();
-		var sol = algG.bestSolution();		// var en nuestro caso es List<Integer> pero no deberia de serlo, deberia de ser s, por eso lo de var (EN PROXIMA CLASE SE VE CON LA CLASE SOLUTION)
+		
+		//var algG = AlgoritmoAG.of(new CromosomaEj2());
+		//algG.ejecuta();
+		//var sol = algG.bestSolution();		// var en nuestro caso es List<Integer> pero no deberia de serlo, deberia de ser s, por eso lo de var (EN PROXIMA CLASE SE VE CON LA CLASE SOLUTION)
 		
 		// 5. Procesar solución
-		System.out.println(sol);
+		
+		//System.out.println(sol);
 
 	}
 

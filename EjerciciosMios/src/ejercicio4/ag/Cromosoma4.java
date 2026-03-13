@@ -40,7 +40,7 @@ public class Cromosoma4 implements PermutationData<Solucion4>{
 			}
 		}
 		
-		// 2. Si no los hemos encontrado en el camino de ida, miramos el de vuelta por si acaso
+		// 2. Si no los hemos encontrado en el camino de ida, miramos el de vuelta por si acaso								 A ESTO SE REFIERE DEL ULTIMO VERTICE AL PRIMERO PARA CERRAR EL CAMINO CERRADO
 		if (!hayDosSeguidos) {
 			Integer ultimo = value.get(size() - 1);
 			Integer primero = value.get(0);

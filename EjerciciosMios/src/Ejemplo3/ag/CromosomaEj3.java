@@ -8,6 +8,12 @@ import us.lsi.ag.agchromosomes.Chromosomes.ChromosomeType;
 
 public class CromosomaEj3 implements PermutationData<List<Integer>>{
 	
+	
+	public CromosomaEj3(String file) {
+		DatosAlumnos.iniDatos(file);
+	}
+	
+	
 	public Integer maxMultiplicity(int index) {
 		return DatosAlumnos.getTamGrupo();			// ESTO ES POR SI DA ERROR DE QUE SE SALE DEL TAMAÑO, PUES LO QUE HACE ESTO ES ADAPTARLO AL TAMAÑO DEL GRUPO
 	}

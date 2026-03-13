@@ -13,6 +13,12 @@ public class CromosomaEj2 implements BinaryData<List<Integer>>{		// Esto no debe
 	
 	// Dandole add unimplemented methods, me pone lo de abajo solo
 	
+	
+	public CromosomaEj2(String file) {
+		DatosSubconjunto.iniDatos(file);
+	}
+	
+	
 	@Override
 	public Integer size() {	// SIEMPRE IGUAL
 		return DatosSubconjunto.getNumSubconjuntos();
