@@ -23,9 +23,9 @@ sum(x[i,j], j in 0 .. m) <= 1, i in 0 .. n
 //R2
 x[i,j] <= getPuedeUbicarse2(i,j), i in 0 .. n, j in 0 .. m
 //R3
-sum(getTamElemento(i)  x[i,j], i in 0 .. n) <= getTamContenedor(j), j in 0 .. m
+sum(getTamElemento(i) x[i,j], i in 0 .. n) <= getTamContenedor(j), j in 0 .. m
 //R4
-sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] >= 0, j in 0 .. m
+sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] = 0, j in 0 .. m
 
 bin
 // Declaracion de variables

@@ -147,7 +147,7 @@ public class Datos2 {
 		return productos.get(i).max();
 	}
 	
-	public static Integer getTiempoProdComp(Integer j) {
+	public static Integer getTiempoProdComp(Integer j) {		// Get Tiempo Produccion Componente
 		return componentes.get(j).tp();
 	}
 	
@@ -169,7 +169,7 @@ public class Datos2 {
 		return getUnidadesComponente(i, j)*getTiempoElabComp(j);
 	}	
 	
-	public static Integer getTiempoProdProd(Integer i) {
+	public static Integer getTiempoProdProd(Integer i) {		// Get Tiempo Produccion Producto
 		return getProducto(i).tp();
 	}	
 	

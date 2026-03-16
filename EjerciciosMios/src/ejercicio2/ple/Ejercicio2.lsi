@@ -27,7 +27,7 @@ sum(getTiempoProdProd(i) x[i], i in 0 .. n) <= getTiempoProdTotal()
 sum(getTiempoElabProd(i) x[i], i in 0 .. n) <= getTiempoElabTotal()
 
 bounds section
-// R1
+// R1																		DA IGUAL SI LO PONEMOS EN bounds section O EN constraints section, VAN A DAR LO MISMO
 // Además, Gurobi ya asume por defecto que las variables "int" son >= 0, así que no hace falta poner x[i] >= 0.
 x[i] <= getUnidsSemanaProd(i), i in 0 .. n
 

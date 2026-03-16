@@ -25,7 +25,7 @@ x[i,j] = 0, i in 0 .. n, j in 0 .. m | getNoPuedeUbicarse(i,j)
 //R3
 sum(getTamElemento(i)  x[i,j], i in 0 .. n) <= getTamContenedor(j), j in 0 .. m
 //R4
-sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] >= 0, j in 0 .. m
+sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] = 0, j in 0 .. m
 
 bin
 // Declaracion de variables
@@ -57,7 +57,7 @@ max sum(y[j], j in 0 .. m)
 constraints section
 // R1 - La suma de tamaños asignados al contenedor j no supera su capacidad
 //      y si y[j]=1, queda acotada por c_j (el optimizador llena el contenedor al maximizar)
-sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] <= 0, j in 0 .. m
+sum(getTamElemento(i) x[i,j], i in 0 .. n) - getTamContenedor(j) y[j] = 0, j in 0 .. m
 
 // R2 - Cada elemento se ubica en como máximo un contenedor
 sum(x[i,j], j in 0 .. m) <= 1, i in 0 .. n

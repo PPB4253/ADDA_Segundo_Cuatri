@@ -14,7 +14,7 @@ public class CromosomaEj3 implements PermutationData<List<Integer>>{
 	}
 	
 	
-	public Integer maxMultiplicity(int index) {
+	public Integer maxMultiplicity(int index) {		// EN LA CLASE DE PermutationData POR DEFECTO NO DEJA REPETIR ELEMENTOS, maxMultiplicity = 1, ENTONCES CON ESTO LO QUE HACEMOS ES PERMITIR QUE SE REPITAN LOS ELEMENTOS SEGUN EL TAMAÑO DEL GRUPO
 		return DatosAlumnos.getTamGrupo();			// ESTO ES POR SI DA ERROR DE QUE SE SALE DEL TAMAÑO, PUES LO QUE HACE ESTO ES ADAPTARLO AL TAMAÑO DEL GRUPO
 	}
 

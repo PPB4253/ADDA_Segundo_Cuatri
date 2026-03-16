@@ -34,7 +34,7 @@ public class Cromosoma1 implements BinaryData<Solucion1> {		// Esto es lo que va
 	private Integer cuentaIncompatiblilidades(List<Integer> value) {	// Mira si has metido a dos personas juntas que no se soportan. Devuelve el número de parejas incompatibles.
 		Integer incompatibles = 0;
 		for (Integer i = 0; i < size(); i++) {
-			if (value.get(i) == 0) {
+			if (value.get(i) == 0) {				// SE PUEDE PONER SOLO if (value.get(i) == 1) Y CONTINUAR CON EL BUCLE ABAJO
 				continue;
 			}
 			for (Integer k = 0; k < size(); k++) {
