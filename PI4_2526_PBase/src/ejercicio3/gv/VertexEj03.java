@@ -45,7 +45,7 @@ public record VertexEj03(Integer indice, List<Integer> intersseccionesPendientes
 		
 		nuevaDuracionAcumulada = this.duracionAcumulada + Datos3.tiempo(this.indice, a);
 		
-		if (Datos3.sonMonumentos(this.indice, a)) {
+		if (Datos3.sonMonumentos(this.indice, a)) {				// Para que se cumpla RESTRICCION (R2): Hay 2 monumentos consecutivos
 			nuevosMonumentosConsecutivosYaLogrados = true;
 		}
 		

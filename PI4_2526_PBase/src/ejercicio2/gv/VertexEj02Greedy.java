@@ -34,7 +34,7 @@ public record VertexEj02Greedy(Integer indice, List<Integer> capacidadesRestante
 		return actions;
 	}
 	
-	public Integer greedyAction() {
+	public Integer greedyAction() {									// SE PODRIA HACER MAS CLARO, MEJOR VER EL EJERCICIO 3 GREEDY
 		// 1. Pedimos las "llaves" de las puertas legales
 		List<Integer> accionesValidas = actions();
 		// ID de nuestra papelera

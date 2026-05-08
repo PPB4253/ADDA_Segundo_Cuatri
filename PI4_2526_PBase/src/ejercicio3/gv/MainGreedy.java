@@ -1,9 +1,9 @@
-package ejercicio2.gv;
+package ejercicio3.gv;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ejercicio2.Datos2;
+import ejercicio3.Datos3;
 import us.lsi.graphs.alg.AStar;
 import us.lsi.graphs.alg.BT;
 import us.lsi.graphs.virtual.EGraph;
@@ -14,19 +14,19 @@ public class MainGreedy {
 
 	public static void main(String[] args) {
 		// 1. Cargamos Datos
-		Datos2.iniDatos("src/ejercicio2/gv/DatosEntrada1.txt");
+		Datos3.iniDatos("src/ejercicio3/gv/DatosEntrada1.txt");
 		
 		// 2. Creamos el Vertice Inicial
-		List<Integer> capacidadInicial = new ArrayList<>();
-		for (Integer i = 0; i < Datos2.getNumContenedores(); i++) {
-			capacidadInicial.add(Datos2.getTamContenedor(i));
+		List<Integer> intersseccionesPendientesIniciales = new ArrayList<>();
+		for (int i = 1; i < Datos3.N; i++) {
+			intersseccionesPendientesIniciales.add(i);
 		}
-		VertexEj02Greedy vI = new VertexEj02Greedy(0, capacidadInicial);
+		VertexEj03Greedy vI = new VertexEj03Greedy(0, intersseccionesPendientesIniciales, 0.0, false);
 		
-		// 3. Creamos el Grafo Virtualç
-		var gV = EGraph.virtual(vI).type(Type.Max).pathType(PathType.Sum).heuristic(VertexEj02Greedy::heuristica).build();
+		// 3. Creamos el Grafo Virtual
+		var gV = EGraph.virtual(vI).type(Type.Min).pathType(PathType.Sum).heuristic(VertexEj03Greedy::heuristica).build();
 		
-		// 4. Ejercutamos los Algortimos
+		// 4. Ejercutamos los ALgortimos
 		var aBT = BT.ofGreedy(gV);
 		var aS = AStar.ofGreedy(gV);
 		
