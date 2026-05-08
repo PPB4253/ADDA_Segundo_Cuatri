@@ -27,7 +27,7 @@ public class Test {
 			// 5. Procesar la solución.
 			var solucion = GurobiLp.gurobi("src/ejercicio2/ple/Ejercicio2-"+i+".lp");
 			if (solucion.isPresent()) {				
-				System.out.println(solucion.get().toString((vble, valor)-> valor>0));	// BiCondicional que solo me muestra las variables (vble) que tengan valor (valor) mayor que 0
+				System.out.println(solucion.get().toString((vble, valor)-> valor>0));	// BiCondicional que solo me muestra las variables (vble) que tengan valor (valor) mayor que 0, es decir, cuantos productos hacemos de cada tipo
 			} else {
 				System.out.println("\n\n*****Modelo sin solución****");
 			}

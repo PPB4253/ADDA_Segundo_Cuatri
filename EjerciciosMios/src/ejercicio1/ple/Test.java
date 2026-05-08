@@ -27,7 +27,7 @@ public class Test {
 			// 5. Procesar la solución.
 			var solucion = GurobiLp.gurobi("src/ejercicio1/ple/Ejercicio1-"+i+".lp");
 			if (solucion.isPresent()) {				
-				System.out.println(solucion.get().toString((vble, valor)-> valor>0));	// BiCondicional que solo me muestra las variables (vble) que tengan valor (valor) mayor que 0
+				System.out.println(solucion.get().toString((vble, valor)-> valor>0));	// BiCondicional que solo me muestra las variables (vble) que tengan valor (valor) mayor que 0, ya que solo son las que me intersan, es decir, si el candidato es elegido, si no lo es me la pela
 			} else {
 				System.out.println("\n\n*****Modelo sin solución****");
 			}
