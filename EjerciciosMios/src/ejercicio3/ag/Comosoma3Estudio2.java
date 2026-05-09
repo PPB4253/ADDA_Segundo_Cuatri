@@ -62,7 +62,7 @@ public class Comosoma3Estudio2 implements RangeIntegerData<List<Integer>>{
 		return exceso;
 	}
 
-	private Double llenos(List<Integer> value) {
+	private Double llenos(List<Integer> value) {						// Para ver que el espacio de los contenedores que estoy mirando este lleno (comparanto su espacio lleno con el espacio ocupado ahora)
 		Double contenedoresLLenos = 0.0;
 		for (Integer j = 0; j < Datos3.getNumContenedores(); j++) {
 			Double espacioLLeno = 0.0;
