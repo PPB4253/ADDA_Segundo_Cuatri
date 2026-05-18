@@ -84,7 +84,7 @@ public class PD {
 	// Método auxiliar para calcular el peso real de la decisión
 	private Double pesoDeLaAccion(HVEj1 problema, Integer accion) {
 		if (accion == 1) {
-			return (double) Datos1.getValoracion(problema.indice()); 
+			return (double) Datos1.getValoracion(problema.indice()); 		// FUNCION OBJETIVO
 		} else {
 			return 0.0;
 		}

@@ -1,0 +1,16 @@
+head section
+Integer getNumAreasServicio()
+Double getBeneficio(Integer i)
+Double getPresupuestoMax()
+getCosteConstruccion(Integer i)
+
+Integer n = getNumAreasServicio()
+
+goal section
+max sum(getBeneficio(i) x[i], i in 0 .. n)
+
+constraint section
+sum (getCosteConstruccion(i) x[i], i in 0 .. n) <= getPresupuestoMax()
+
+bin
+x[i], i in 0 .. n

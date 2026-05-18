@@ -40,7 +40,7 @@ public class EstadoEj03 {
 	
 	
 	public Double cota(Integer action) {
-		return this.valorSolucion + Datos3.esfuerzo(verticeActual.indice(), action) + VertexEj03.heuristica(verticeActual.neighbor(action), null, null);
+		return this.valorSolucion + Datos3.esfuerzo(verticeActual.indice(), action) + VertexEj03.heuristica(verticeActual.neighbor(action), null, null);		// METODO DE LA FUNCION OBJETIVO: esfuerzo
 	}
 	
 	public void forward(Integer action) {

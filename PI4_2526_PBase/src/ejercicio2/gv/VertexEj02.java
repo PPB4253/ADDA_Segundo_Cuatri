@@ -39,7 +39,7 @@ public record VertexEj02(Integer indice, List<Integer> capacidadesRestantes) imp
 	public VertexEj02 neighbor(Integer a) {				// a es el contenedor que estoy mirando
 		Integer nuevoIndice = this.indice + 1;
 		List<Integer> nuevaCapacidadRestante = new ArrayList<>(this.capacidadesRestantes);
-		if (a < Datos2.getNumContenedores()) {
+		if (a < Datos2.getNumContenedores()) {												// Solo varia la capacidad del contenedor si asignamos un elemento al contenedor (a < Datos2.getNumContenedores()), si no se asigna seria a = Datos2.getNumContenedores() y el tamaño del contenedor se quedaria siendo una copia: List<Integer> nuevaCapacidadRestante = new ArrayList<>(this.capacidadesRestantes);
 			Integer capacidadActualDelContenedor = nuevaCapacidadRestante.get(a);
 			Integer tamElemento = Datos2.getTamElemento(this.indice);
 			

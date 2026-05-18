@@ -35,7 +35,7 @@ public class Estado {
 	}
 	
 	// Método auxiliar: Si la acción es 1, devolvemos la valoración. Si es 0, devolvemos 0.
-	private Double getPeso(Integer indice, Integer action) {
+	private Double getPeso(Integer indice, Integer action) {									// METODO DE LA FUNCION OBJETIVO: valoraciones
 		return action == 1 ? (double) Datos1.getValoracion(indice) : 0.0;
 	}
 	

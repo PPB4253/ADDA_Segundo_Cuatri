@@ -13,7 +13,7 @@ public record HEEj02(HVEj02 source, List<HVEj02> targets, Integer action) implem
 		Double totalWeight = targetsWeight.get(0);
 		
 		// 2. Si la acción fue meter el objeto en un contenedor...
-		if (this.action < Datos2.getNumContenedores()) {
+		if (this.action < Datos2.getNumContenedores()) {							// Funcion Objetivo
 			// Miramos el primer vecino (solo hay uno en este problema)
 			HVEj02 vecino = this.targets.get(0);
 			

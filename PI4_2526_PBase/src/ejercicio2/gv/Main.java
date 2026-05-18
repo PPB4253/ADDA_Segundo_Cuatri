@@ -16,7 +16,7 @@ public class Main {
 		// 1. Cargamos Datos
 		Datos2.iniDatos("src/ejercicio2/gv/DatosEntrada1.txt");
 		
-		// 2. Vertice Inicia
+		// 2. Vertice Inicial
 		List<Integer> capacidadInicial =  new ArrayList<>();
 		for (Integer i = 0; i < Datos2.getNumContenedores(); i++) {
 			capacidadInicial.add(Datos2.getTamContenedor(i));

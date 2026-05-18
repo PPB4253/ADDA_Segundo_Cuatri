@@ -13,15 +13,15 @@ public class PDEj02 {
 					// Integer action, y Double solucion (el pair es la solucion de Ej01HV, el problema)
 	private Map<HVEj02, Pair<Integer, Double>> memoria;
 	
-	public List<Pair<Integer, Double>> search(HVEj02 inicial) {
+	public List<Pair<Integer, Double>> search(HVEj02 inicial) {		// Devuelve lista de soluciones
 		memoria = new HashMap<>();			// Iniciamos Memoria
 		pd(inicial);
 		return solucion(inicial);
 	}
 	
-
-	private List<Pair<Integer, Double>> solucion(HVEj02 inicial) {
-		List<Pair<Integer, Double>> sol = new ArrayList<>();
+												// Vertice inicial que le pasamos en el test
+	private List<Pair<Integer, Double>> solucion(HVEj02 inicial) {	// Devuelve lista de soluciones
+		List<Pair<Integer, Double>> sol = new ArrayList<>();				// Esta es la lista de soluciones
 		
 		// Caso INICIAL
 		Pair<Integer, Double> sp = memoria.get(inicial);				// Creamos una solucion parcial
@@ -30,9 +30,9 @@ public class PDEj02 {
 		
 		// Demas Casos
 		while (problema.isBaseCase() == false) {		// Mientras no llegemos al final
-			sp = memoria.get(problema);
-			sol.add(sp);
-			problema = problema.neighbors(sp.first()).get(0);
+			sp = memoria.get(problema);									// Creamos una solucion parcial
+			sol.add(sp);												// La añadimos a la solucion
+			problema = problema.neighbors(sp.first()).get(0);			// Pasamos al siguiente problema
 		}
 		return sol;
 	}
@@ -50,7 +50,7 @@ public class PDEj02 {
 				return null;		// Devolvemos null
 			}
 			sp = new Pair<>(null, 0.0);						// Esto significa que HEMOS RECORRIDO TODAS LAS ACTIONS (null) y EL PROBLEMA TIENE SOUCION	(0.0)
-			memoria.put(problema, sp);			// Añadimos a memoria la solucion
+			memoria.put(problema, sp);			// Añadimos a memoria la solucion, asociandola a su problema
 			return sp;							// Devolvemos la solucion
 		}
 		
@@ -75,7 +75,7 @@ public class PDEj02 {
 		if (mejorSp == null) {		// Si no tenemos solucion devolvemos null
 			return null;
 		}
-		memoria.put(problema, mejorSp);		// metemos en la memoria el problema con su mejor solucion
+		memoria.put(problema, mejorSp);		// Metemos en la memoria el problema con su mejor solucion
 		return mejorSp;		// Devolvemos la mejor solucion
 	}
 
@@ -98,6 +98,19 @@ public class PDEj02 {
 			return 0.0; // No se ha llenado del todo, no ganamos puntos en este paso
 		}
 	}
+	/*
+	 
+	 			ESTO HACE EXACTAMENTE LO MISMO QUE ARRIBA Y ES LO MISMO USADO EN LA COTA DE BT
+	 
+	 	Double pesoAccion = 0.0;
+	    if (action < Datos2.getNumContenedores()) {
+	        if (verticeActual.capacidadesRestantes().get(action) - Datos2.getTamElemento(verticeActual.indice()) == 0) {		// Si esta completamente lleno
+	            pesoAccion = 1.0;
+	        }
+	    }
+	    
+	 */
+	
 
 
 	public static void main(String[] args) {
@@ -105,7 +118,7 @@ public class PDEj02 {
 		
 		PDEj02 pd = new PDEj02();
 		List<Integer> capacidadesRestantesIniciales = new ArrayList<>();
-		for (Integer i = 0; i < Datos2.getNumContenedores(); i++) {
+		for (Integer i = 0; i < Datos2.getNumContenedores(); i++) {						// FUNCION OBJETIVO
 			capacidadesRestantesIniciales.add(Datos2.getTamContenedor(i));
 		}
 		HVEj02 inicial = new HVEj02(0, capacidadesRestantesIniciales);

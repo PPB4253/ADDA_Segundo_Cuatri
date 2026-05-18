@@ -37,7 +37,7 @@ public class BTEj02 {
 		for (Integer action: estado.verticeActual().actions()) {
 			// PODA
 			if (estado.cota(action) <= valorMejorSolucion) {		// Pq queremos Maximizar
-				continue;			// No nos sirve
+				continue;			// No nos sirve, pq queremos que sea mayot que valorMejorSolucion
 			}
 			
 			// RECORRIDO

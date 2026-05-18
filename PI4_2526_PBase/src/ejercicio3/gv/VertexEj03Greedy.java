@@ -41,11 +41,11 @@ public record VertexEj03Greedy(Integer indice, List<Integer> intersseccionesPend
 		}
 		
 		// Empezamos asumiendo que la primera acción es la mejor
-		Integer mejorAccion = accionesValidas.get(0);
-		Double menorEsfuerzo = Datos3.esfuerzo(this.indice, mejorAccion);
+		Integer mejorAccion = accionesValidas.get(0);				// No es la mejor la 0, o si, pero hay que empezar por una
+		Double menorEsfuerzo = Datos3.esfuerzo(this.indice, mejorAccion);		// FUNCION OBJETIVO
 		
 		// Comparamos con el resto de acciones disponibles
-		for (int i = 1; i < accionesValidas.size(); i++) {
+		for (int i = 1; i < accionesValidas.size(); i++) {		// Empezamos en 1 pq el 0 ya lo hemos cogido arriba
 			Integer accionActual = accionesValidas.get(i);
 			Double esfuerzoActual = Datos3.esfuerzo(this.indice, accionActual);
 			

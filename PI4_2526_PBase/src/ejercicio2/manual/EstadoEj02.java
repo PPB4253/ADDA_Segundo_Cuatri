@@ -49,7 +49,7 @@ public class EstadoEj02 {
 	        }
 	    }
 	    // IMPORTANTE: Sumar valorSolucion + punto de ahora + heurística futuro
-	    return this.valorSolucion + pesoAccion + VertexEj02.heuristica(verticeActual.neighbor(action), null, null);
+	    return this.valorSolucion + pesoAccion + VertexEj02.heuristica(verticeActual.neighbor(action), null, null);		// METODO DE LA FUNCION OBJETIVO: pesoAccion que es llenar el mayor numero de contendores
 	}
 	
 	public void forward(Integer action) {
